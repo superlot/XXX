@@ -1,0 +1,57 @@
+---
+layout: main
+title: Interactive Examples
+section: examples
+---
+
+{% include header.html %}
+
+<div id="Content">
+  <h3>Interactive Example</h3>
+  <p>Choose a filter and move the slider to see it in action. This is only a sample of the full power of CamanJS.</p>
+
+  <img
+    id="example" 
+    src="/images/example1_600.jpg"
+    data-caman-hidpi="/images/example1_1200.jpg"
+  >
+
+  <div id="Filters">
+  {% for filter in site.filters %}
+    <div class="Filter">
+      <div class="FilterName">
+        <p>{{filter}}</p>
+      </div>
+
+      <div class="FilterSetting">
+        <input
+          type="range" 
+          min="{{site.filter_options[filter].min}}"
+          max="{{site.filter_options[filter].max}}"
+          step="{{site.filter_options[filter].step}}"
+          value="0"
+          data-filter="{{filter}}"
+        >
+        <span class="FilterValue">0</span>
+      </div>
+    </div>
+  {% endfor %}
+
+  <div class="Clear"></div>
+  </div>
+
+  <h3>Preset Examples</h3>
+  <p>CamanJS has a number of preset filters that show off how to generate consistent effects on many types of images.</p>
+
+  <img 
+    id="preset-example" 
+    src="/images/example2_600.jpg"
+    data-caman-hidpi="/images/example2_1200.jpg"
+  >
+
+  <div id="PresetFilters">
+  {% for preset in site.caman_presets %}
+    <a data-preset="{{preset}}">{% format_camelcase preset %}</a>
+  {% endfor %}
+  </div>
+</div>

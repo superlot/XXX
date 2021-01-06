@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+git checkout gh-pages
+
+sleep 2
+
+rm -rf !("_site"|"CNAME")
+cp -R _site/* .
+rm -rf _site
+git commit -a -m $1
+git push origin gh-pages
+
+sleep 2
+
+git checkout master

@@ -1,0 +1,11 @@
+source 'http://rubygems.org'
+
+gem 'jekyll'
+gem 'haml'
+gem 'rake'
+gem 'rdiscount'
+gem 'sass'
+gem 'coffee-script'
+gem 'capistrano'
+gem 'jekyll-asset-pipeline'
+gem 'yui-compressor'
